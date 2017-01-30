@@ -47,6 +47,11 @@ var arrrev = arr.reverse();
 numberUnits (num);
 
 // Задание 3
+var obj = {
+  name: 'Roman',
+  title: 'Mr.',
+  age: 39
+};
 function objectToQueryString (obj) {
   var objString = '';  
   for (var key in obj) {
@@ -54,3 +59,4 @@ function objectToQueryString (obj) {
   }
   return objString.substring (0, objString.length-1);
 }
+objectToQueryString (obj);
