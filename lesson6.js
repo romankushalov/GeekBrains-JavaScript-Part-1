@@ -61,3 +61,24 @@ function reverseArrayInPlace (arr) {
     return arr;
 };
 console.log (reverseArrayInPlace(arr));
+
+// pick
+var user = {
+        name: 'Sergey',
+        age: 30,
+        email: 'sergey@gmail.com',
+        friends: ['Sveta', 'Artem']
+    };
+
+function pick(obj, keys) {
+  var newObj = {};
+  for (var i = 0; i < keys.length; i++) {
+    if (keys.length === 0) {
+      return newObj;
+    } else if (obj[keys[i]] !== undefined) {
+      newObj[keys[i]] = obj[keys[i]];
+    }
+  }
+  return newObj;
+}
+pick(user, ['name', 'friends', 'second-name']);
