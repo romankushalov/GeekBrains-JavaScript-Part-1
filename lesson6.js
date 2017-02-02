@@ -39,7 +39,7 @@ console.log(nth (arrayToList([1, 2, 3]), 3)); //undefined
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 function reverseArray(arr) {
   var x = [];
-    for (i=arr.length - 1; i>=0; i--) {
+    for (var i=arr.length - 1; i>=0; i--) {
     x.push (arr[i]);
   }
   return x;
@@ -50,7 +50,7 @@ console.log (reverseArray (arr));
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 function reverseArrayInPlace (arr) {
     var counter = 0;
-    for (i= (arr.length - 1); i>=0; i--) {
+    for (var i= (arr.length - 1); i>=0; i--) {
         var changed = arr[counter];
         if (i >= Math.floor(arr.length/2)){
             arr[counter] = (arr[i]);
