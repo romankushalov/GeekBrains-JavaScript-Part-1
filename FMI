@@ -1,0 +1,74 @@
+function isPal(string) {	
+	var newstr;
+	var newstrarr;
+	var palidr
+	if(typeof string !== "number") {
+		newstr = string.toLowerCase();
+	} else {
+		newstr = string.toString();
+	}
+	newstrarr = newstr.split('');
+	newstr = newstr.replace(/\s/g, '');
+	newstrarr.reverse();
+	palidr = newstrarr.join('').replace(/\s/g, '')
+	if (+palidr !== NaN) {
+	  +palidr;
+	}
+	if(palidr === newstr) {
+	  	return true;
+	} else {
+		return false;
+	}
+}
+
+function pal(form) {
+    var text = form.data.value.replace(/\s+/g, ''); 
+
+//Вместо 7 строки: var text = form.data.value;
+while (text.indexOf(' ') >= 0) text = text.replace(' ', '');
+//
+    var p1 = 0, p2 = text.length - 1;
+    while (p1 < p2)
+        if (text.charAt(p1++) != text.charAt(p2--))
+        {
+            form.res.value='не является палиндромом';
+            return;
+        }
+    form.res.value='палиндром';
+}
+
+function palindrom(str) { 
+    var count=0;
+    var leng=str.length;
+    k=leng/2;
+    while((str.charAt(count)==str.charAt(str.length-count-1))&&(count<=k))
+    { count++;
+    }
+    if (count>k) return 1
+    else return 0;
+}   
+
+function palindrome(str) {
+  /* remove special characters, spaces and make lowercase*/
+  var removeChar = str.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+
+  /* reverse removeChar for comparison*/
+  var checkPalindrome = removeChar.split('').reverse().join('');
+
+  /* Check to see if str is a Palindrome*/
+   return (removeChar === checkPalindrome);
+}
+
+function isPalindrome(str) {
+    str = str.split("");
+
+    var str2 = str.filter(function(x){ 
+        if(x !== ' ' && x !== ',') {
+            return x;
+        }
+    });
+
+    return console.log(str2.join('').toLowerCase()) == console.log(str2.reverse().join('').toLowerCase());
+};
+
+isPalindrome("A car, a man, a maraca"); //true
