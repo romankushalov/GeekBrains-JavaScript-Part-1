@@ -25,7 +25,7 @@ console.log(prepend(0, arrayToList ([1, 2, 3])));
 //Возвращение элемента на заданной позиции
 function nth(list, num) {
   if (!list)
-    return undefined;
+    return;
   else if (num == 0)
     return list.value;
   else
@@ -52,7 +52,7 @@ function reverseArrayInPlace (arr) {
     var counter = 0;
     for (var i= (arr.length - 1); i>=0; i--) {
         var changed = arr[counter];
-        if (i >= Math.floor(arr.length/2)){
+        if (i >= Math.floor(arr.length/2)) {
             arr[counter] = (arr[i]);
             arr[i] = changed;
             counter ++;
@@ -70,15 +70,19 @@ var user = {
         friends: ['Sveta', 'Artem']
     };
 
-function pick(obj, keys) {
+function pick (obj, keys) {
   var newObj = {};
-  for (var i = 0; i < keys.length; i++) {
-    if (keys.length === 0) {
-      return newObj;
-    } else if (obj[keys[i]] !== undefined) {
-      newObj[keys[i]] = obj[keys[i]];
-    }
-  }
+  if (keys.length == 0) {
+      console.log ('Задайте параметр keys!');
+    } else {
+   for (var i = 0; i < keys.length; i++) {
+    if (obj[keys[i]] !== undefined) {
+       newObj[keys[i]] = obj[keys[i]];     
+    } 
+   }
   return newObj;
+ }
 }
-pick(user, ['name', 'friends', 'second-name']);
+pick(user, ['name', 'friends', 'second-name']); // All is Ok!
+pick(user,''); // Без ключей keys: 'Задайте параметр keys!'
+
